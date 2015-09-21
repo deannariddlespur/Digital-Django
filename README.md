@@ -82,12 +82,12 @@ nano post-recieve
   ssh root@<droplet IP address> (use your droplet IP address)
   ```
   * Go into the project directory
-  * 
+ 
 ```
    cd /home/django/django-project/
   ./manage.py loaddata fixtures/user.json
 ```
-3. Go to the browser
+* Go to the browser
 ```
     your.ip.adress/admin
 ```
