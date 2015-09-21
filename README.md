@@ -42,6 +42,10 @@
     $ cd hooks
 ```
 5. Create or edit your post-receive with the script below
+``` 
+nano post-recieve
+```
+
 ```
     #!/bin/sh
     git --work-tree=/home/django/django_project --git-dir=/home/django/repo checkout -f
@@ -52,33 +56,37 @@
 
     service gunicorn restart
 ```
+
 6. Make the hook executable
-7. ```
+```
     $ chmod +x post-receive
 ```
 7. Add production remote to local environment
+8. 
 ```
     $ git remote add production ssh://root@<Droplet Ip adrees>/home/django/repo
 ```
+
 8. Push code to new production remote
 ```
     $ git push production master
 ````
-    - if that fails, use this
+## if that fails, use this
 ```
         $ git push production master --force
 ```
 
 ## Create your superuser
-1. Connected via ssh
- ```
+* Connected via ssh
+```
   ssh root@<droplet IP address> (use your droplet IP address)
   ```
-2. Go into the project directory
-  ```
+  * Go into the project directory
+  * 
+```
    cd /home/django/django-project/
   ./manage.py loaddata fixtures/user.json
-  ```
+```
 3. Go to the browser
 ```
     your.ip.adress/admin
