@@ -7,9 +7,9 @@
 2. Create a Digital ocean account if you don't have one
 3. Add you ssh key to your digital ocean account
 
-   ````
+```
     $ pbcopy < ~/.ssh/id_rsa.pub
-   ````
+```
 4. Paste your ssh into digital ocean
 
 ## Create Digital Ocean Droplet
@@ -21,28 +21,28 @@
 
 ### Setup your droplet
 1. connect to you droplet via ssh
-   ````
+```
     $ssh root@<droplet IP address> (use your droplet IP address)
-   ````
+```
 2. Capture the DB password and *update your settings* (when you log in you can see this information in the terminal)
 3. Then drop and create the existing database
-   ```
+```
     $ sudo su - postgres
     $ dropdb django
     $ createdb django
     $ exit
    ```
 4. Setup the git repo
-    ````
+```
     $ apt-get install git
     $ cd /home/django
     $ mkdir repo
     $ cd repo
     $ git init --bare
     $ cd hooks
-    ````
+```
 5. Create or edit your post-receive with the script below
-    ````
+```
     #!/bin/sh
     git --work-tree=/home/django/django_project --git-dir=/home/django/repo checkout -f
 
@@ -51,23 +51,23 @@
     python /home/django/django_project/manage.py migrate --noinput
 
     service gunicorn restart
-    ````
+```
 6. Make the hook executable
-    ````
+7. ```
     $ chmod +x post-receive
-    ````
+```
 7. Add production remote to local environment
-    ````
+```
     $ git remote add production ssh://root@<Droplet Ip adrees>/home/django/repo
-    ````
+```
 8. Push code to new production remote
-    ````
+```
     $ git push production master
-    `````
+````
     - if that fails, use this
-        ````
+```
         $ git push production master --force
-        ````
+```
 
 ## Create your superuser
 1. Connected via ssh
@@ -80,8 +80,8 @@
   ./manage.py loaddata fixtures/user.json
   ```
 3. Go to the browser
-    ````
+```
     your.ip.adress/admin
-    ````
+```
     User: admin
     Password: admin
