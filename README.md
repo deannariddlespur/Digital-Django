@@ -1,4 +1,4 @@
-[![Deploy](http://media.djangopony.com/img/small/badge.png)](https://www.digitalocean.com)
+[![Deploy](http://media.djangopony.com/img/small/badge.png)](https://www.djangoproject.com/)
 [![Deploy](https://assets.digitalocean.com/blog/sammy-cleaning-up.png)](https://www.digitalocean.com)
 
 # django skeleton project for deploy in digitalocean
