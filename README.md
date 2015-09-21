@@ -20,19 +20,21 @@
 5. select your ssh key
 
 ### Setup your droplet
-1. connect to you droplet via ssh
+*  connect to you droplet via ssh
 ```
     $ssh root@<droplet IP address> (use your droplet IP address)
 ```
-2. Capture the DB password and *update your settings* (when you log in you can see this information in the terminal)
-3. Then drop and create the existing database
+## Database configuration
+* Capture the DB password and *update your settings* (when you log in you can see this information in the terminal)
+* Then drop and create the existing database
 ```
     $ sudo su - postgres
     $ dropdb django
     $ createdb django
     $ exit
    ```
-4. Setup the git repo
+  
+  ## Setup the git repo
 ```
     $ apt-get install git
     $ cd /home/django
@@ -41,7 +43,7 @@
     $ git init --bare
     $ cd hooks
 ```
-5. Create or edit your post-receive with the script below
+##  Create or edit your post-receive with the script below
 ``` 
 nano post-recieve
 ```
@@ -57,17 +59,17 @@ nano post-recieve
     service gunicorn restart
 ```
 
-6. Make the hook executable
+#  Make the hook executable
 ```
     $ chmod +x post-receive
 ```
-7. Add production remote to local environment
-8. 
+# Add production remote to local environment
+ 
 ```
     $ git remote add production ssh://root@<Droplet Ip adrees>/home/django/repo
 ```
 
-8. Push code to new production remote
+#  Push code to new production remote
 ```
     $ git push production master
 ````
