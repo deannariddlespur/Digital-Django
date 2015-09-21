@@ -1,5 +1,5 @@
 [![Deploy](https://assets.digitalocean.com/blog/sammy-cleaning-up.png)](https://www.digitalocean.com)
-[![Deploy](http://media.djangopony.com/img/small/iphone.png)](https://www.digitalocean.com)
+[![Deploy](http://media.djangopony.com/img/small/badge.png)](https://www.digitalocean.com)
 # django skeleton project for deploy in digitalocean
 
 1. Clone the repository on you local environment
