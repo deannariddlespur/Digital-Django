@@ -73,7 +73,7 @@ nano post-recieve
 ```
     $ git push production master
 ````
-## if that fails, use this
+##  if that fails, use this
 ```
         $ git push production master --force
 ```
